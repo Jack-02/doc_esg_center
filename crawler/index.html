@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#esg" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -319,10 +324,71 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          网络爬虫
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         网络爬虫
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    资源
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    安装及运行环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    构成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    功能及使用方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -434,6 +500,51 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    资源
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    安装及运行环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    构成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    功能及使用方法
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -448,9 +559,54 @@
                   
 
 
-  <h1>网络爬虫</h1>
-
-
+<h1 id="esg">ESG报告爬虫说明文档</h1>
+<h2 id="_1">简介</h2>
+<p>本爬虫程序是用于爬取巨潮网、上交所官网和深交所官网的ESG报告及相关信息的Python程序。本程序可以在指定时间范围内收集报告的基本信息，包括标题、发布日期、PDF的URL以及来源网站。本文档将提供有关程序的基本信息，如运行环境、使用方法和参数选项等。</p>
+<h2 id="_2">资源</h2>
+<p>目前已经获得巨潮网、上交所官网和深交所官网的ESG报告以及相关信息(京交所的相关报告数量过少没有爬取)。采用精确搜索字符串 <strong>“环境、社会及”</strong> <em>(最后一个关键词表述不一致，不做限制以获取更多篇目)</em> 的方式，经过 <code>MD5</code> 码去重后得到近5000篇。后续可以纳入更多的网站或优化搜索细节以丰富资源。</p>
+<h2 id="_3">安装及运行环境</h2>
+<p>通过以下命令克隆仓库</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone git@git.tsinghua.edu.cn:citigroup-cup/web-crawler.git
+</code></pre></div>
+<p>本程序需要 <code>Python 3.9</code> 版本。运行程序之前，请确保已安装以下Python库：</p>
+<ul>
+<li>
+<p>requests==2.28.1</p>
+</li>
+<li>
+<p>在项目根目录使用以下命令安装：</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</code></pre></div>
+<h2 id="_4">构成</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>├── get_data.py
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── cninfo.py
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── shse.py
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── szse.py
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>└── requirements.txt
+</code></pre></div>
+<ul>
+<li><code>get_data.py</code>：是爬虫的运行接口，调用其他库文件。使用时应与所有库文件在同一目录下。</li>
+<li><code>cninfo.py</code>：针对巨潮网的爬取方法。</li>
+<li><code>shse.py</code>：针对上交所官网的爬取方法。</li>
+<li><code>szse.py</code>：针对深交所官网的爬取方法。</li>
+</ul>
+<h2 id="_5">功能及使用方法</h2>
+<p>使用前请确保已经安装上述库文件，并保证它们在同一目录下。运行以下命令以了解命令行参数的使用方法：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python get_data.py -h
+</code></pre></div>
+<p>命令行参数如下：</p>
+<ul>
+<li><code>-src SRC</code> 或 <code>-s SRC</code>：信息来源。可选项包括：1（巨潮网）、2（上交所）、3（深交所）或0（所有）。默认值为0。</li>
+<li><code>-date DATE</code> 或 <code>-d DATE</code>：日期范围。需要输入形如2021-01-23的日期字符串，表示从特定网站筛选报告的发布时间满足：[该指定日期,程序运行时刻的日期]，并将它们更新到本地。默认为不加时间限制。</li>
+<li><code>-path PATH</code> 或 <code>-p PATH</code>：<code>JSON</code>文件的下载路径。必需项，没有默认值。</li>
+</ul>
+<p>运行以下命令以启动程序：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">python</span> <span class="n">get_data</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">src</span> <span class="n">SRC</span> <span class="o">--</span><span class="n">date</span> <span class="n">DATE</span> <span class="o">--</span><span class="n">path</span> <span class="n">PATH</span>
+</code></pre></div>
+<p>注意：这里的<code>SRC</code>、<code>DATE</code>和<code>PATH</code>分别指用户提供的参数值。</p>
+<p>本爬虫程序会以 <code>JSON</code> 文件的形式收集每篇报告的基本信息，包括标题、发布日期、报告的 <code>URL</code> 以及来源网站。具体地，该JSON由若干个字典组成的列表构成。每个字典形如：<code>{'title': title, 'url': pdf_url,'publishdate': date_str,'src':source}</code>。</p>
 
 
 

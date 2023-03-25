@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#esg-center" class="md-skip">
           跳转至
         </a>
       
@@ -303,16 +303,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#_1" class="md-nav__link">
+    项目架构
   </a>
+  
+    <nav class="md-nav" aria-label="项目架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    网络爬虫
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    网络应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#_4" class="md-nav__link">
+    开发进程
   </a>
+  
+    <nav class="md-nav" aria-label="开发进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    网络爬虫
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    网络应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -487,16 +527,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#_1" class="md-nav__link">
+    项目架构
   </a>
+  
+    <nav class="md-nav" aria-label="项目架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    网络爬虫
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    网络应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#_4" class="md-nav__link">
+    开发进程
   </a>
+  
+    <nav class="md-nav" aria-label="开发进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    网络爬虫
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    网络应用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -515,21 +595,28 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h1 id="esg-center">欢迎使用 ESG Center 技术文档</h1>
+<h2 id="_1">项目架构</h2>
+<p>ESG Center 由网络爬虫和网络应用两大组件构成。其中，网络应用是用户与ESG Center交互的对象，它允许用户按标题检索ESG报告，并获取原始文件以及包括关键词、短语、摘要在内的重要信息；网络爬虫则是网络应用的辅助工具，它可以帮助网络应用的运维人员快速更新数据库，</p>
+<h3 id="_2">网络爬虫</h3>
+<p>网络爬虫用于获取ESG报告的标题、URL、发布时间、文件来源等信息。该组件使用关键词检索的方式从上市公司信息披露平台获取ESG报告数据并保存至本地，目前支持的数据来源包括上海证券交易所、深圳证券交易所以及巨潮资讯网。该组件具有良好的拓展性，便于增加新模块以扩展信息披露来源。</p>
+<h3 id="_3">网络应用</h3>
+<p>网络应用用于向用户展示ESG报告及其相关信息，具体包括：报告标题、发布时间、关键词、短语、摘要和原文链接。该应用使用Django框架进行开发并以Sqlite3作为数据库，数据量达到五千余条。除数据展示之外，网络应用还实现了网络爬虫工具的接口，便于运维人员及时更新数据。</p>
+<h2 id="_4">开发进程</h2>
+<h3 id="_5">网络爬虫</h3>
+<p>2月27日，开发进程启动<br />
+3月1日，调整项目结构<br />
+3月19日，增加用户选项<br />
+3月20日，修复系统问题<br />
+3月25日，完成文档  </p>
+<h3 id="_6">网络应用</h3>
+<p>2月12日，开发进程启动<br />
+3月2日，调整数据库<br />
+3月7日，加载数据<br />
+3月8日，网页模板更新<br />
+3月18日，用户系统实现<br />
+3月19日，修复系统问题<br />
+3月25日，完成文档、系统上线</p>
 
 
 
